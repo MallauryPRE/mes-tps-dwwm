@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Citation de Platon</title>
+</head>
+<body>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid" style="background-color: #352c28;">
+          <a class="navbar-brand text-white">Citation de Platon</a>
+          <form class="d-flex" role="recherche">
+            <input class="form-control me-2" type="recherche" placeholder="recherche" aria-label="recherche">
+            <button class="btn btn-outline-success" type="submit">recherche</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container mt-4 horizontal-line"></div>
+      <div class="container mt-4">
+        <div class="row">
+    
+          <!-- Colonne 1 -->
+          <div class="col-md-4 column-divider">
+                <img src="Platon.png" class="card-img-top" alt="...">
+          </div>
+    
+          <!-- Colonne 2 -->
+          <div class="col-md-4 column-divider">
+            <div class="card mb-4">
+              <div class="card-body">
+                <section class="">
+                  <p class="d-flex justify-content-center align-items-center text-body">
+                    <span class="me-3"></span>
+                    <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded text-body" onclick="refreshPage()"  >
+                      Génère une citation GAMIN
+                    </button>
+                  </p>
+                </section>
+              </div>
+            
+              </div>
+            </div>
+    
+            <div class="col-md-4 column-divider">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5 id="auteur" class="card-title">Card title</h5>
+                  <p id="texte" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>  
+                </div>
+              </div>
+      
+            </div>
+      
+          </div>
+        </div>
+            
+          </div>
+    
+        </div>
+      </div>
+
+
+      
+      <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: #352c28;">
+          <!-- Grid container -->
+            <!-- Section: CTA -->
+            
+            <!-- Section: CTA -->
+          </div>
+          <!-- Grid container -->
+      
+          <!-- Copyright -->
+          <div class="text-center p-3">
+            © 2024 Copyright:
+            <p class="text-white">Mallo</p>
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </section>
+
+
+      <script>
+        function refreshPage() {
+            location.reload(true); // Recharge la page en forçant la reprise du cache
+        }
+    </script>
+</body>
+</html>

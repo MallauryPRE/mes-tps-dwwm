@@ -1,0 +1,11 @@
+.paragraph {
+    border: 5px solid yellow
+}
+
+body {
+    background-color: 'white';
+}
+
+.hidden {
+    display: none;
+}

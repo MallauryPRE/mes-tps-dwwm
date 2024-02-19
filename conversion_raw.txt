@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertisseur de devises</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #keyboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  <div id="keyboard">
+    <!-- Keyboard buttons -->
+    <button onclick="appendToInput('0')">0</button>
+    <button onclick="appendToInput('1')">1</button>
+    <button onclick="appendToInput('2')">2</button>
+    <button onclick="appendToInput('3')">3</button>
+    <button onclick="appendToInput('4')">4</button>
+    <button onclick="appendToInput('5')">5</button>
+    <button onclick="appendToInput('6')">6</button>
+    <button onclick="appendToInput('7')">7</button>
+    <button onclick="appendToInput('8')">8</button>
+    <button onclick="appendToInput('9')">9</button>
+    <button onclick="appendToInput('.')">,</button>
+  </div>
+
+  <!-- Currency selection -->
+  <div>
+    <label>Monnaie de départ:</label>
+    <input type="radio" name="currencyFrom" value="usd" checked> USD
+    <input type="radio" name="currencyFrom" value="eur"> EUR
+    <input type="radio" name="currencyFrom" value="gbp"> GBP
+  </div>
+
+  <div>
+    <label>Monnaie d'arrivée:</label>
+    <input type="radio" name="currencyTo" value="usd"> USD
+    <input type="radio" name="currencyTo" value="eur" checked> EUR
+    <input type="radio" name="currencyTo" value="gbp"> GBP
+  </div>
+
+  <!-- Input and result fields -->
+  <input type="text" id="inputAmount" placeholder="Saisissez le montant">
+  <button onclick="convertCurrency()">Convertir</button>
+  <br>
+  <label>Résultat:</label>
+  <input type="text" id="result" readonly>
+</div>
+
+<script>
+  function appendToInput(value) {
+    document.getElementById('inputAmount').value += value;
+  }
+
+  function convertCurrency() {
+    const inputAmount = parseFloat(document.getElementById('inputAmount').value);
+    const currencyFrom = document.querySelector('input[name="currencyFrom"]:checked').value;
+    const currencyTo = document.querySelector('input[name="currencyTo"]:checked').value;
+
+    // Replace these rates with the actual exchange rates
+    const exchangeRates = {
+      usd: { eur: 0.85, gbp: 0.73 },
+      eur: { usd: 1.18, gbp: 0.86 },
+      gbp: { usd: 1.37, eur: 1.16 }
+    };
+
+    const result = inputAmount * exchangeRates[currencyFrom][currencyTo];
+    
+    document.getElementById('result').value = result.toFixed(2);
+  }
+</script>
+
+</body>
+</html>

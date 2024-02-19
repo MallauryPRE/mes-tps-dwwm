@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  #keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px;
+    cursor: pointer;
+  }
